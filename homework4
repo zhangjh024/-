@@ -1,0 +1,127 @@
+#include<iostream>
+#include<fstream>
+#include<string>
+#include<iomanip>
+#include<ctime>
+#include<windows.h>
+
+using namespace std;
+int point[100000];
+int  main()
+{
+int choice1;
+
+cout<<"                 -----        收银系统         ----"<<endl;
+			cout<<"                 -----------------------------------"<<endl;
+			cout<<"                             1.本场员工优惠           "<<endl;
+			cout<<"                             2.学生凭证优惠           "<<endl;
+			cout<<"                             3.vip用户优惠              "<<endl;
+			cout<<"                             4.无优惠普通用户           "<<endl;
+			cout<<"                -----------------------------------"<<endl;
+			cout<<"                           请选择您要服务的类别:";
+cin>>choice1;
+if(choice1==1)
+{
+    cout<<"请输入工作证号：";
+    string workid;
+    double sum1;
+    cin>>workid;
+    cout<<"请输入购物金额：";
+    cin>>sum1;
+    cout<<"您消费原金额是：";
+    cout<<sum1<<endl;
+    cout<<"因为您是员工，优惠后消费金额为：";
+    cout<<sum1*0.8<<endl;
+}
+
+if(choice1==2)
+{
+    cout<<"请输入学生证号：";
+    string studentid;
+    double sum2;
+    cin>>studentid;
+    cout<<"请输入购物金额：";
+    cin>>sum2;
+    cout<<"您消费原金额是：";
+    cout<<sum2<<endl;
+    if(sum2>=100)
+    {
+    cout<<"因为您是学生，优惠后消费金额为：";
+    cout<<sum2-10<<endl;
+    }
+    else
+    {
+        cout<<"因为您是学生，优惠后消费金额为：";
+        cout<<sum2<<endl;
+    }
+}
+
+if(choice1==3)
+{
+    int choice2;
+    int vipid;
+    cout<<"请输入会员号：";
+    cin>>vipid;
+    cout<<"------  消费1   ---------"<<endl;
+    cout<<"------  查询积分2   ---------"<<endl;
+    cout<<"------  兑换奖品3   ---------"<<endl;
+    cout<<" 请输入选择： "<<endl;
+    cin>>choice2;
+    if(choice2==1){
+
+    double sum3;
+    cout<<"请输入购物金额：";
+    cin>>sum3;
+    point[vipid]+=sum3;
+    cout<<"您消费原金额是：";
+    cout<<sum3<<endl;
+    cout<<"因为您是vip用户，优惠后消费金额为：";
+    cout<<sum3*0.6<<endl;
+    cout<<"您的积分为：";
+        cout<<point[vipid];
+                                }
+    if(choice2==2)
+    {
+        cout<<"您的积分为：";
+        cout<<point[vipid];
+    }
+
+    if(choice2==3)
+    {
+
+    }
+
+}
+
+if(choice1==4)
+{
+    double sum1;
+    cout<<"请输入购物金额：";
+    cin>>sum1;
+    cout<<"您消费金额是：";
+    cout<<sum1<<endl;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+return 0;
+}
